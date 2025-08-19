@@ -9,8 +9,8 @@ interface SampleData {
 }
 
 const sampleData: SampleData[] = [
-  { id: 1, name: 'John Doe', age: 28 },
-  { id: 2, name: 'Jane Smith', age: 34 },
+  { id: 1, name: 'Nikhil Rane', age: 28 },
+  { id: 2, name: 'Arpit Desai', age: 34 },
 ];
 
 const columns: Column<SampleData>[] = [
