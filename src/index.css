@@ -16,3 +16,13 @@
     transform: rotate(360deg);
   }
 }
+
+.text-center[role="status"] {
+  background-color: #f9fafb;
+  color: #6b7280;
+}
+
+.dark .text-center[role="status"] {
+  background-color: #1f2937;
+  color: #9ca3af;
+}

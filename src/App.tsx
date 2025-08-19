@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import InputField from './components/InputField';
 import DataTable from './components/DataTable';
 import type { Column } from './types/DataTable.types';
@@ -18,9 +19,25 @@ const columns: Column<SampleData>[] = [
 ];
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
   return (
     <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">React Components Demo</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">React Components Demo</h1>
+        <button
+          onClick={toggleTheme}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+          aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
       <InputField
         id="email-input"
         label="Email"
